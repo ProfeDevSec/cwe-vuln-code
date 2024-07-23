@@ -1,0 +1,19 @@
+<div>
+    <h2>Create Transfer</h2>
+    <form (ngSubmit)="createTransfer()">
+      <div>
+        <label for="fromAccount">From Account:</label>
+        <input id="fromAccount" [(ngModel)]="transferRequest.fromAccount" name="fromAccount" required>
+      </div>
+      <div>
+        <label for="toAccount">To Account:</label>
+        <input id="toAccount" [(ngModel)]="transferRequest.toAccount" name="toAccount" required>
+      </div>
+      <div>
+        <label for="amount">Amount:</label>
+        <input id="amount" type="number" [(ngModel)]="transferRequest.amount" name="amount" required>
+      </div>
+      <button type="submit">Create Transfer</button>
+    </form>
+  </div>
+  

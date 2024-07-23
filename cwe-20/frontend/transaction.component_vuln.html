@@ -1,0 +1,20 @@
+<div>
+    <h2>Create Transaction</h2>
+    <form (submit)="createTransaction()">
+      <div>
+        <label>Account Number:</label>
+        <input type="text" [(ngModel)]="transaction.accountNumber" name="accountNumber" required>
+      </div>
+      <div>
+        <label>Amount:</label>
+        <input type="number" [(ngModel)]="transaction.amount" name="amount" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div *ngIf="message">
+      <!-- CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') -->
+      <!-- Directly inserting the message into the HTML without escaping -->
+      <div [innerHTML]="message"></div>
+    </div>
+  </div>
+  
